@@ -1,0 +1,2 @@
+web: vendor/bin/heroku-php-apache2 public/ Procfile
+web: php artisan key:generate
