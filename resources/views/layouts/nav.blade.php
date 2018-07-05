@@ -25,6 +25,7 @@
                                     <li>
                                         <ul>
                                             <li><a href="{{url('/transactions')}}">Transactions</a></li>
+                                            <li><a href="{{url('/care')}}">Customer Care</a></li>
                                         </ul>
                                     </li>
                                     
@@ -59,7 +60,7 @@
                                     </a>
 
                                     <!-- item-->
-                                    <a href="href="{{url('settings/')}}" class="dropdown-item notify-item">
+                                    <a href="{{url('settings/')}}" class="dropdown-item notify-item">
                                         <i class="zmdi zmdi-settings"></i> <span>Settings</span>
                                     </a>
 

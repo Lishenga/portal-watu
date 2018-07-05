@@ -13,7 +13,7 @@ class ViewsController extends Controller
     {
         # code...
         $customers = WatuRequest::get([],env('API_URL').'/api/GetAllCustomers/');
-        
+
         return view('customers.index')->with([
             'customers'=>$customers->data,
         ]);

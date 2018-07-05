@@ -12,12 +12,12 @@
 */
 
 
-Route::get('/','ViewController@index');
-Route::get('logout','ViewController@getLogout');
-Route::post('signing','ViewController@signin');
+Route::get('/', [ 'as' => 'login', 'uses' => 'ViewController@index'])->middleware('https');
+Route::get('logout','ViewController@getLogout')->middleware('https');
+Route::post('signing','ViewController@signin')->middleware('https');
 
 
-Route::prefix('customers')->middleware('auth')->group(function () {
+Route::prefix('customers')->middleware('auth')->middleware('https')->group(function () {
 
     Route::get('/','Customers\ViewsController@index');
     Route::get('/create','Customers\CustomersController@index');
@@ -31,15 +31,22 @@ Route::prefix('customers')->middleware('auth')->group(function () {
 
 });
 
-Route::prefix('transactions')->middleware('auth')->group(function () {
+Route::prefix('transactions')->middleware('auth')->middleware('https')->group(function () {
 
     Route::get('/','Transactions\ViewsController@view');
 
 });
 
 
+Route::prefix('care')->middleware('auth')->middleware('https')->group(function () {
 
-Route::prefix('roles')->middleware('auth')->group(function () {
+    Route::get('/','Customers\CareController@view');
+
+});
+
+
+
+Route::prefix('roles')->middleware('auth')->middleware('https')->group(function () {
 
     Route::get('/','RoleController@index');
     Route::post('/create','RoleController@create');
@@ -48,7 +55,7 @@ Route::prefix('roles')->middleware('auth')->group(function () {
     Route::get('/particular','RoleController@particular');
 });
 
-Route::prefix('permissions')->middleware('auth')->group(function () {
+Route::prefix('permissions')->middleware('auth')->middleware('https')->group(function () {
 
     Route::get('/','PermissionController@index');
     Route::post('/create','PermissionController@create');
@@ -57,7 +64,7 @@ Route::prefix('permissions')->middleware('auth')->group(function () {
 });
 
 
-Route::prefix('settings')->middleware('auth')->group(function () {
+Route::prefix('settings')->middleware('auth')->middleware('https')->group(function () {
 
     Route::get('/','Settings\ViewsController@index');
 
