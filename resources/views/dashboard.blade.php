@@ -6,7 +6,12 @@
       
 <div class="container-fluid">
                 
-    <!-- Page-Title -->
+    <!-- Page-Title 
+    
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    -->
     <div class="row">
         <div class="col-sm-12">
             <h4 class="page-title">Dashboard</h4>
