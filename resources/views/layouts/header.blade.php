@@ -45,26 +45,5 @@
 
     <body>
 
-    <script type='text/javascript' data-cfasync='false'>
-
-    window.purechatApi = { l: [], t: [], on: 
-
-    function () { this.l.push(arguments); } }; 
-
-    (function () { var done = false; 
-
-    var script = document.createElement('script'); 
-
-    script.async = true; script.type = 'text/javascript'; 
-
-    script.src = 'https://app.purechat.com/VisitorWidget/WidgetScript'; 
-
-    document.getElementsByTagName('HEAD').item(0).appendChild(script); 
-
-    script.onreadystatechange = script.onload = 
-
-    function (e) { if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete'))
-
-    { var w = new PCWidget({c: '8bc92850-4b38-452c-9460-12c25f8a3842', f: true }); done = true; } }; })();
-    
-    </script>
+    <script type="text/javascript">function add_chatinline(){var hccid=79489132;var nt=document.createElement("script");nt.async=true;nt.src="https://mylivechat.com/chatinline.aspx?hccid="+hccid;var ct=document.getElementsByTagName("script")[0];ct.parentNode.insertBefore(nt,ct);}
+add_chatinline(); </script>
