@@ -45,36 +45,26 @@
 
     <body>
 
-    <script>
+    <script type='text/javascript' data-cfasync='false'>
 
-        window.fbAsyncInit = function() {
+    window.purechatApi = { l: [], t: [], on: 
 
-            FB.init({
+    function () { this.l.push(arguments); } }; 
 
-            appId            : '165513557640304',
+    (function () { var done = false; 
 
-            autoLogAppEvents : true,
+    var script = document.createElement('script'); 
 
-            xfbml            : true,
+    script.async = true; script.type = 'text/javascript'; 
 
-            version          : 'v3.0'
+    script.src = 'https://app.purechat.com/VisitorWidget/WidgetScript'; 
 
-            });
+    document.getElementsByTagName('HEAD').item(0).appendChild(script); 
 
-        };
+    script.onreadystatechange = script.onload = 
 
-        (function(d, s, id){ 
+    function (e) { if (!done && (!this.readyState || this.readyState == 'loaded' || this.readyState == 'complete'))
 
-            var js, fjs = d.getElementsByTagName(s)[0];
-
-            if (d.getElementById(id)) {return;}
-
-            js = d.createElement(s); js.id = id;
-
-            js.src = "https://connect.facebook.net/en_US/sdk.js";
-
-            fjs.parentNode.insertBefore(js, fjs);
-
-        }(document, 'script', 'facebook-jssdk'));
-
+    { var w = new PCWidget({c: '8bc92850-4b38-452c-9460-12c25f8a3842', f: true }); done = true; } }; })();
+    
     </script>
