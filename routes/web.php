@@ -12,7 +12,7 @@
 */
 
 
-Route::get('/', [ 'as' => 'login', 'uses' => 'ViewController@index']);
+Route::get('hah', [ 'as' => 'login', 'uses' => 'ViewController@index']);
 Route::get('logout','ViewController@getLogout');
 Route::post('signing','ViewController@signin');
 
